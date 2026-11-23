@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function Page() {
@@ -10,8 +10,43 @@ function Page() {
             <Route path="/products" element={<Products />} />
             <Route path="*" element={<NotFound />} />
          </Routes>
+         <NavBar />
       </BrowserRouter>         
   );
+}
+
+function NavBar() {
+   return (
+      <nav>
+         <ul>
+            <li>
+               <Link to="/">Home</Link>
+            </li>
+            <li>
+               <Link to="/products">Products</Link>
+            </li>
+            <li>
+               <Link to="/about">About</Link>
+            </li>
+         </ul>
+      </nav>
+   );
+}
+
+function Home() {
+   return <h1>Home</h1>;
+}
+
+function Products() {
+   return <h1>Products</h1>;
+}
+
+function About() {
+   return <h1>About</h1>;
+}
+
+function NotFound() {
+   return <h1>Not Found</h1>;
 }
 
 root.render(<Page/>);
