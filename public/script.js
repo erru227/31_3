@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+const { BrowserRouter, Route, Routes, Link } = ReactRouterDOM;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 function Page() {
