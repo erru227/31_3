@@ -5,7 +5,7 @@ const web_files = express.static("public");
 
 app.use(web_files);
 
-app.get('/{*splat}', (req, res) => {
+app.get(/.*/, (req, res) => {
    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
